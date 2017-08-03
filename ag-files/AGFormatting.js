@@ -522,8 +522,14 @@ function initializeSnapAdditions(snapWorld, taskID) {
             // if (edX_check_button) {
                 console.log("Exists!");
                 clearInterval(checkExist);
+                if (typeof current_iframe === "undefined") {
+                    var current_iframe = window.frameElement;
+                }
                 //edX_check_button = current_iframe.parentNode.parentNode.parentNode.parentNode.parentNode.nextElementSibling.children[1];
                 edX_check_button = current_iframe.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[2].children[0];
+                if (typeof edX_check_button === undefined || typeof edX_check_button === "undefined") {
+                    edX_check_button = current_iframe.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[1].children[0];
+                }
 
                 edX_check_button.onclick = function () {
                     sessionStorage.setItem(

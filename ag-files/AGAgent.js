@@ -1,4 +1,5 @@
 var current_iframe = window.frameElement;
+console.log(current_iframe);
 var num_iframes = parent.document.getElementsByClassName('problem-header').length;
 var iframes = parent.document.getElementsByTagName("iframe");
 
@@ -191,10 +192,10 @@ function AGFinish(outputLog) {
     }
     console.log('Autograder test Results:');
     console.log(outputLog);
-    if (isEDXurl()) {
+    if (isEDXurl() && !edX_check_button.hasAttribute("disabled")) {
         edX_check_button.click();
     } 
-    if (!isEDXurl()) {
+    if (!isEDXurl() || edX_check_button.hasAttribute("disabled")) {
         populateFeedback(outputLog, false)
         openResults();
     }
