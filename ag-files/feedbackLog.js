@@ -307,7 +307,7 @@ FeedbackLog.prototype.finishSnapTest = function(test, output) {
         var myscript = getScript(test.blockSpec);
         test.picture = myscript.returnResultBubble(output);
     } catch (e) {
-        console.log('Error Generating Script Pic: ', e);
+        //console.log('Error Generating Script Pic: ', e);
         test.picture = null;
     }
 
