@@ -1,5 +1,4 @@
 var current_iframe = window.frameElement;
-console.log(current_iframe);
 var num_iframes = parent.document.getElementsByClassName('problem-header').length;
 var iframes = parent.document.getElementsByTagName("iframe");
 
