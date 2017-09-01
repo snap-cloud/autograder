@@ -23,6 +23,8 @@ function AGTest(outputLog) {
     );
 
     var blockName = "find contacts with name: %";
+    var originalVariable;
+    var originalContents;
 
     /*var spriteIndex;
     var ide = world.children[0];
@@ -66,18 +68,14 @@ function AGTest(outputLog) {
 
     var contactListExists_1 = function() {
         try {
-            var originalVariable = getGlobalVar("contact list", getAllGlobalVars());
-            var originalContents = originalVariable.contents;
+            originalVariable = getGlobalVar("contact list", getAllGlobalVars());
+            originalContents = originalVariable.contents;
             getGlobalVar("contact list", getAllGlobalVars()).contents = [new List(["Betsy Anderson", "123 Main St. #4, New York NY 10001", "212-555-1234"]), new List(["John Smith", "50 First Lane", "435-9876"]), new List(["Alphie Preston", "149 E. 16th Ave.", "234-555-6789"])];
-            console.log("should've been set");
-            console.log(getGlobalVar("contact list", getAllGlobalVars()).contents);
             return true;
         } catch(err) {
             return false;
         }
     }
-    var originalVariable = getGlobalVar("contact list", getAllGlobalVars());
-    var originalContents = originalVariable.contents;
     
     var tip_1_1 = chunk_1.newTip('Make sure you name your block exactly "' + blockName + '", place it in the scripting area.',
         'The "' + blockName + '" block exists.');
@@ -122,6 +120,8 @@ function AGTest(outputLog) {
         1
     );
 
+    console.log("I get here before");
+
     tip_1_1.newAssertTest(
         contactListExists_1,
         'Testing if the "contact list" global variable exists.',
@@ -129,6 +129,11 @@ function AGTest(outputLog) {
         'Make sure you initialize the global variable "contact list".',
         1
     );
+
+    console.log("i get here!!!!!!");
+    if (!contactListExists_1()) {
+        return fb;
+    }
 
     var tip_1_2 = chunk_1.newTip(
         'Your block should return the correct values for the given input and the global variable "contact list" containing the values [["Betsy Anderson", ...], ["John Smith", ...], ["Alphie Preston", ...]].',
@@ -360,6 +365,7 @@ function AGTest(outputLog) {
                 tip_1_2.suggestion += ' but was ' + actual + '.';
                 return false;
             }
+            console.log(originalContents);
             getGlobalVar("contact list", getAllGlobalVars()).contents = originalContents;
             return true;
         },

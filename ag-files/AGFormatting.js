@@ -9,6 +9,7 @@ var menu_right;
 var button;
 var button_style;
 var button_right;
+var edX_check_button;
 
 // TODO: Pull out first 6 lines in a shared function
 function AG_bar_ungraded(outputLog) {
@@ -527,7 +528,7 @@ function initializeSnapAdditions(snapWorld, taskID) {
                 }
                 //edX_check_button = current_iframe.parentNode.parentNode.parentNode.parentNode.parentNode.nextElementSibling.children[1];
                 edX_check_button = current_iframe.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[2].children[0];
-                if (typeof edX_check_button === undefined || typeof edX_check_button === "undefined") {
+                if (typeof edX_check_button === undefined || typeof edX_check_button === "undefined" || edX_check_button.className.indexOf("submit") === -1) {
                     edX_check_button = current_iframe.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[1].children[0];
                 }
 
