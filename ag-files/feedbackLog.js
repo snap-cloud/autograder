@@ -208,6 +208,7 @@ FeedbackLog.prototype.startSnapTest = function(test) {
         }
         // Set the selected block's inputs for the test
         setValues(block, test.input);
+        // set inputs for arrays
         if (Array.isArray(test.input)) {
             var temp = test.input;
             test.input = [];
@@ -218,7 +219,6 @@ FeedbackLog.prototype.startSnapTest = function(test) {
                     test.input.push(temp[j]);
                 }
             }
-
         }
         // Initiate the Snap Process with a callback to .finishSnapTest
         var stage = this.snapWorld.children[0].stage;
@@ -307,7 +307,7 @@ FeedbackLog.prototype.finishSnapTest = function(test, output) {
         var myscript = getScript(test.blockSpec);
         test.picture = myscript.returnResultBubble(output);
     } catch (e) {
-        console.log('Error Generating Script Pic: ', e);
+        //console.log('Error Generating Script Pic: ', e);
         test.picture = null;
     }
 
