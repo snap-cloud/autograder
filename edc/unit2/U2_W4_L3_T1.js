@@ -237,4 +237,8 @@ function AGTest(outputLog) {
 
     return fb;
 
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> upstream/master
