@@ -10,7 +10,7 @@ var courseID = "edc"; // e.g. "BJCx"
 var preReqTaskID = null;
 var preReqID = courseID + preReqTaskID;
 // taskID uniquely identifies the task for saving in browser sessionStorage.
-var taskID = "_U5_L2_P1_T3"; //this should follow the name of the nomenclature document
+var taskID = "_U3_L4_P2_T3"; //this should follow the name of the nomenclature document
 var id = courseID + taskID;
 var isEDX = isEDXurl();
 // if this question is not meant to be graded, change this flag to false
@@ -35,7 +35,7 @@ function AGTest(outputLog) {
         'Graphing App' //Name of the particular task you are creating.
     );
 
-    var go_to_scaled_point = "go to scaled point x: % y: %" //for style purposes please change both the string and the variable name i.e var desc = "desc"
+    var go_to_scaled_point = "go to xGraph: % yGraph: %" //for style purposes please change both the string and the variable name i.e var desc = "desc"
     var chunk_1 = fb.newChunk('Complete the "' + go_to_scaled_point + '" block.'); //creates a chunk
 
     //basic function to check if the block is even in Snap!'s staging area
