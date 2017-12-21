@@ -10,7 +10,7 @@ var courseID = "BJC.4x";  // e.g. "BJCx"
 var preReqTaskID = null;
 var preReqID = courseID + preReqTaskID;
 // taskID uniquely identifies the task for saving in browser sessionStorage.
-var taskID = "_U6_L1_P1_T1"; //this should follow the name of the nomenclature document
+var taskID = "_U7_L1_P1_T1"; //this should follow the name of the nomenclature document
 var id = courseID + taskID;
 var isEDX = isEDXurl();
 // if this question is not meant to be graded, change this flag to false
