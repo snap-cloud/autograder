@@ -1,4 +1,4 @@
-var starter_path = "U7_L4_P3_E3_4_starter.xml";
+var starter_path = "U8_L4_P3_E3_4_starter.xml";
 // The id is to act as a course identifier.
 // NOTE: FOR NOW YOU ALSO HAVE TO ADD THE ID TO THE BOTTOM OF THE PAGE.
 var courseID = "edc";  // e.g. "BJCx"
