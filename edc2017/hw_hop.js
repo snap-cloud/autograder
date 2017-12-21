@@ -1,4 +1,4 @@
-var starter_path = "M4_W5_L1_T1_starter.xml";
+var starter_path = "hw_hop_starter.xml";
 // The id is to act as a course identifier.
 // NOTE: FOR NOW YOU ALSO HAVE TO ADD THE ID TO THE BOTTOM OF THE PAGE.
 var courseID = "BJC.4x";  // e.g. "BJCx"
@@ -6,7 +6,7 @@ var courseID = "BJC.4x";  // e.g. "BJCx"
 var preReqTaskID = null;
 var preReqID = courseID + preReqTaskID;
 // taskID uniquely identifies the task for saving in browser sessionStorage.
-var taskID = "_M4_W5_L1_T1";
+var taskID = "_hw_hop";
 var id = courseID + taskID;
 var isEDX = isEDXurl();
 // if this question is not meant to be graded, change this flag to false
