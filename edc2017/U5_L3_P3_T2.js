@@ -2,7 +2,7 @@
 //            Standard Start Code
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var starter_path = "U5_L3_P4_T2_starter.xml";
+var starter_path = "U5_L3_P3_T2_starter.xml";
 // The id is to act as a course identifier.
 // NOTE: FOR NOW YOU ALSO HAVE TO ADD THE ID TO THE BOTTOM OF THE PAGE.
 var courseID = "edc";  // e.g. "BJCx"
@@ -10,7 +10,7 @@ var courseID = "edc";  // e.g. "BJCx"
 var preReqTaskID = null;
 var preReqID = courseID + preReqTaskID;
 // taskID uniquely identifies the task for saving in browser sessionStorage.
-var taskID = "_U5_L3_P4_T2"; //this should follow the name of the nomenclature document
+var taskID = "_U5_L3_P3_T2"; //this should follow the name of the nomenclature document
 var id = courseID + taskID;
 var isEDX = isEDXurl();
 // if this question is not meant to be graded, change this flag to false
