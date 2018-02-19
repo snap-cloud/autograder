@@ -21,10 +21,10 @@
         <script type="text/javascript" src="snap/sha512.js"></script>
         <script type="text/javascript" src="snap/FileSaver.min.js"></script>
         <script type="text/javascript" src="snap/tables.js"></script>
+        <script type="text/javascript" src="snap/symbols.js"></script>
 
         <!-- AG Snap Modifications -->
         <script src="ag-files/snap-edx-overrides.js"></script>
-        <script src="ag-files/snap-local-cloud.js"></script>
         <!-- Autograder custom display -->
         <link rel="stylesheet" type="text/css" href="ag-files/AG_status_bar.css" />
         <link rel="stylesheet" type="text/css" href="ag-files/hintstyle.css" />
@@ -32,7 +32,7 @@
         <script src="lib/jschannel.js"></script>
         <script src="lib/jquery-1.11.3.min.js"></script>
         <script src="lib/underscore-min.js"></script>
-        
+
         <!-- Main autograder components -->
         <script src='ag-files/ag-util.js'></script>
         <script src='ag-files/spriteEventLog.js'></script>
@@ -56,7 +56,7 @@
             ide.openIn(world);
             // Start Snap Environment Loop
             loop();
-            
+
             // AUTOGRADER ADDITIONS:
             // Set Snap! to small stage mode
             ide.toggleStageSize(true);
