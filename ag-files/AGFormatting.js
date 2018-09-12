@@ -23,8 +23,8 @@ function AG_bar_ungraded(outputLog) {
         button_elem.html(button_text);
         button_elem.slideDown('fast');
         $('#autograding_button').css('background', 'orange');
-    }); 
-     
+    });
+
     $('#autograding_button .hover_darken').show();
     $('#onclick-menu').css('color', 'white');
     if (sessionStorage.getItem(outputLog.taskID + "_test_log")) {
@@ -54,7 +54,7 @@ function AG_bar_graded(outputLog) {
 }
 
 /*
- * Makes AG status bar reflect the semi graded state of the outputLog. 
+ * Makes AG status bar reflect the semi graded state of the outputLog.
  * This is called when any test on the outputLog fails.
  */
 function AG_bar_semigraded(outputLog) {
@@ -64,7 +64,7 @@ function AG_bar_semigraded(outputLog) {
     var num_errors = outputLog.testCount - outputLog.numCorrect;
     var plural = "";
     if (num_errors > 1) { plural = "s"};
-    $('#feedback-button').html("View Feedback ("+ 
+    $('#feedback-button').html("View Feedback ("+
         num_errors +" Error" + plural + ")");
     if (button_elem.html().match(regex) !== null) {
         return;
@@ -100,23 +100,23 @@ function replaceall(string, find, replace) {
  * appropriate CSS. Return the re-formatted string.
  */
 function formatFeedback(hint) {
-    var tags = 
-    [['collapsedivstart', '<input class="toggle-box" id="expander' + String(id_problem) + '" type="checkbox" ><label for="expander' + String(id_problem) + '">Details</label><div id="table-wrapper">'], 
-    ['collapsedivend', '</div>'], 
-    ['linebreak', '<br /></br />'], 
-    ['tablestart', '<table class="results">'], 
-    ['tableend', '</table>'], 
-    ['rowstart', '<tr>'], 
-    ['rowend', '</tr>'], 
-    ['headstart', '<th class="titles" style="text-align: center;">'], 
-    ['headend', '</th>'], 
-    ['datastart', '<td class="data" style="text-align: center;">'], 
+    var tags =
+    [['collapsedivstart', '<input class="toggle-box" id="expander' + String(id_problem) + '" type="checkbox" ><label for="expander' + String(id_problem) + '">Details</label><div id="table-wrapper">'],
+    ['collapsedivend', '</div>'],
+    ['linebreak', '<br /></br />'],
+    ['tablestart', '<table class="results">'],
+    ['tableend', '</table>'],
+    ['rowstart', '<tr>'],
+    ['rowend', '</tr>'],
+    ['headstart', '<th class="titles" style="text-align: center;">'],
+    ['headend', '</th>'],
+    ['datastart', '<td class="data" style="text-align: center;">'],
     ['evenstart', '<td class="evens" style="text-align: center;">'],
-    ['dataend', '</td>'], 
+    ['dataend', '</td>'],
     ['correctstart', '<td class="correctans" style="text-align: center;">'],
     ['wrongstart', '<td class="incorrectans" style="text-align: center;">'],
     ['teststart', '<td class="tests" style="text-align: center;">'],
-    ['spanend', '</span>'], 
+    ['spanend', '</span>'],
     ['spanstart', '<span class="message">']];
 
     var taglength = tags.length;
@@ -245,9 +245,9 @@ function makeOverlayButton() {
     overlay_button.classList.add('overlay-button');
     var button = parent.document.getElementsByName('problem_id')[id_problem];
     button.parentNode.insertBefore(overlay_button, button.nextSibling);
-    overlay_button.onclick = function() { 
+    overlay_button.onclick = function() {
         overlay_button.style.display = "none";
-        grade_button.click(); 
+        grade_button.click();
     }
 }
 
@@ -305,7 +305,7 @@ function moveAutogradingBar() {
     if (ide.stageRatio === 1) {
         autograding_bar.style.right = '9em';
     } else {
-        autograding_bar.style.right = '16em';
+        autograding_bar.style.right = '22em';
     }
 }
 
@@ -352,9 +352,9 @@ function createInitialHelp() {
     $("#full-screen-arrow").clone().appendTo("#initial-help");
     $("#full-screen-help").clone().appendTo("#initial-help");
 
-    var arrow = document.getElementById("ag-button-arrow"), 
+    var arrow = document.getElementById("ag-button-arrow"),
         arrow_clone = arrow.cloneNode(true);
-    var help = document.getElementById("ag-button-help"), 
+    var help = document.getElementById("ag-button-help"),
         help_clone = help.cloneNode(true);
 
     arrow_clone.id = "initial-ag-button-arrow";
@@ -362,7 +362,7 @@ function createInitialHelp() {
 
     document.getElementById("initial-help").appendChild(arrow_clone);
     document.getElementById("initial-help").appendChild(help_clone);
-    
+
     setInitialHelpDisplay(true)
 }
 
@@ -555,7 +555,7 @@ function initializeSnapAdditions(snapWorld, taskID) {
         var full_screen = document.getElementById('full-screen');
         full_screen.onclick = function() {
             toggleSnapWindow(full_screen, id);
-            moveHelp();   
+            moveHelp();
         }
         var full_screen_on = JSON.parse(sessionStorage.getItem(taskID + "full-screen-on"));
         if (full_screen_on) {
@@ -587,7 +587,7 @@ function initializeSnapAdditions(snapWorld, taskID) {
         // correctly the first time it is run, so populateFeedback has to be
         // called twice at the very beginning...
         if (showFeedback && sessionStorage.getItem(taskID + "_popupFeedback") !== null) {
-            populateFeedback(outputLog); 
+            populateFeedback(outputLog);
             populateFeedback(outputLog);
             openResults();
             sessionStorage.removeItem(taskID + "_popupFeedback");
@@ -750,7 +750,7 @@ function createCollapsibleCorrectSection(selector) {
 function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
     // TODO: Declare move variables up here:
     var i, j, x;
-    
+
     // TODO: Extract this function
     document.getElementById("toggle-correct-tests").onclick = function () {
         if (toggleButton.classList.contains("isOff")) {
@@ -790,7 +790,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
     var tipwidth = document.getElementById("numtips").offsetWidth;
 
     onclick_menu.style.right = String(Number(menu_right.slice(0, menu_right.length - 2)) + tipwidth - 2) + "px";
-    
+
     button.style.right = String(Number(button_right.slice(0, button_right.length - 2)) + tipwidth - 2) + "px";
 
     button.style.borderRadius = "0px";
@@ -813,7 +813,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
     // TODO: What is this doing? It seems redundant.
     var chunknum = typeof chunknum !== 'undefined' ? chunknum : undefined;
     var tipnum = typeof tipnum !== 'undefined' ? tipnum : undefined;
-    
+
     if (!showPoints) {
         showPoints = false;
     }
@@ -833,12 +833,12 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
         var tips = chunk.tip_list;
         var header = document.createElement("p");
         header.innerHTML = String(chunk["chunk_title"]) + chunkPoints + '<br><br>';
-        
+
         header.classList.add("chunk-header", "chunk" + String(i));
-        
+
         var correct_chunk = header.cloneNode(true);
         correct_chunk.classList.add("correct-chunk" + String(i));
-        
+
         if (chunk.allCorrect) {
             document.getElementById("correct-section").style.display = "block";
             document.getElementById("correct-section").appendChild(correct_chunk);
@@ -896,7 +896,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
                     }
                     testPoints = "(" + thisTest.points + " point" + testPlural + ") ";
                 }
-                
+
                 if (thisTest.testClass !== "r") {
                     if (document.getElementsByClassName("observations-section" + i + x[0]) !== []) {
                         incorrect_assertions = 0;
@@ -915,7 +915,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
                             // TODO: What's this for?
                         }
                     }
-                    
+
                     if (thisTest.correct) {
                         correct_assertions += 1;
                         if (allFeedback || tip.allCorrect) {
@@ -984,10 +984,10 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
                     }
 
                     var htmlString, string_reporter, testSectionDiv;
-                    
+
                     string_reporter = document.createElement("div")
                     string_reporter.classList.add("data", "assertion");
-                    
+
                     if (thisTest.correct) {
                         if ((allFeedback) || tip.allCorrect) {
                             appendElement(
@@ -996,7 +996,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
                                 "data",
                                 document.getElementsByClassName("tests-section" + i + x)[0]
                             );
-                            
+
                             htmlString = [
                                 '<p class="data assertion">',
                                 testPoints + thisTest.feedback,
@@ -1045,7 +1045,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
                             thisTest.input,
                             '</p> '
                         ].join('');
-                        
+
                         // Don't show "expected output" if the output check is
                         // a custon JS function (where no output type is known.)
                         if (thisTest.expOut && thisTest.expOut.constructor !== Function) {
@@ -1088,7 +1088,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
             } // end j loop
         } // end x loop
     } // end i loop
-    
+
     if (document.getElementsByClassName("incorrectans")[0] !== undefined) {
         document.getElementsByClassName("incorrectans")[0].click();
     }
@@ -1132,7 +1132,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
     if (showPoints) {
         if (log["totalPoints"] !== 1) {
             problemPlural = "s";
-        } 
+        }
         log["totalPoints"] = Math.round(log["totalPoints"]);
         problemPoints = " (" + log["totalPoints"] + " possible point" + problemPlural + ") ";
     }
@@ -1146,7 +1146,7 @@ function populateFeedback(feedbackLog, allFeedback, chunknum, tipnum) {
 
     // TODO: Fix this or document why corercion is needed.
     onclick_menu.style.right = String(Number(menu_right.slice(0, menu_right.length - 2)) + tipwidth - 2) + "px";
-    
+
     button.style.right = String(Number(button_right.slice(0, button_right.length - 2)) + tipwidth - 2) + "px";
 
     button.style.borderRadius = "0px";
